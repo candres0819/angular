@@ -1,4 +1,4 @@
-# Angular
+# AngularMsn
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
 
@@ -25,3 +25,36 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Components
+
+ng generate component components/login <br>
+ng generate component components/home <br>
+ng generate component components/conversation <br>
+ng generate component components/profile <br>
+ng generate component components/menu 
+
+## Interfaces
+
+ng generate interface interfaces/user <br>
+
+## Services
+
+ng generate service services/user <br>
+ng generate service services/authentication <br>
+
+## Pipes
+
+ng generate pipes pipes/search <br>
+
+## Styles
+
+npm install bootstrap --save-exact <br>
+npm install @fortawesome/fontawesome-free --save-exact <br>
+npm install firebase @angular/fire --save <br>
+
+## User register
+candres0819@gmail.com
+abc123
+
