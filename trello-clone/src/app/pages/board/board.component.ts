@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop'
-import { ToDo } from '../../models/todo.model'
+import { Column, ToDo } from '../../models/todo.model'
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -20,37 +20,42 @@ import { ToDo } from '../../models/todo.model'
 })
 export class BoardComponent {
 
-  todos: ToDo[] = [{
-    id: '1.1',
-    title: 'Task 1.1'
+  columns: Column[] = [{
+    title: 'ToDo',
+    todos: [{
+      id: '1.1',
+      title: 'Task 1.1'
+    }, {
+      id: '1.2',
+      title: 'Task 1.2'
+    }, {
+      id: '1.3',
+      title: 'Task 1.3'
+    }]
   }, {
-    id: '1.2',
-    title: 'Task 1.2'
+    title: 'Doing',
+    todos: [{
+      id: '1.1',
+      title: 'Task 1.1'
+    }, {
+      id: '1.2',
+      title: 'Task 1.2'
+    }, {
+      id: '1.3',
+      title: 'Task 1.3'
+    }]
   }, {
-    id: '1.3',
-    title: 'Task 1.3'
-  }];
-
-  doing: ToDo[] = [{
-    id: '2.1',
-    title: 'Task 2.1'
-  }, {
-    id: '2.2',
-    title: 'Task 2.2'
-  }, {
-    id: '2.3',
-    title: 'Task 2.3'
-  }];
-
-  done: ToDo[] = [{
-    id: '3.1',
-    title: 'Task 3.1'
-  }, {
-    id: '3.2',
-    title: 'Task 3.2'
-  }, {
-    id: '3.3',
-    title: 'Task 3.3'
+    title: 'Done',
+    todos: [{
+      id: '3.1',
+      title: 'Task 3.1'
+    }, {
+      id: '3.2',
+      title: 'Task 3.2'
+    }, {
+      id: '3.3',
+      title: 'Task 3.3'
+    }]
   }];
 
   drop(event: CdkDragDrop<any[]>) {
@@ -59,5 +64,12 @@ export class BoardComponent {
     } else {
       transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
     }
+  }
+
+  addColum() {
+    this.columns.push({
+      title: 'New Column',
+      todos: []
+    });
   }
 }
